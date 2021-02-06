@@ -1,0 +1,46 @@
+import java.util.*;
+
+/*問題URL
+* https://paiza.jp/works/mondai/skillcheck_sample/janken?language_uid=java
+* */
+
+public class Main {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        int total_jan_times = sc.nextInt();//じゃんけんの合計回数
+        int total_finger_times = sc.nextInt();//指の総数
+        String jan = sc.nextLine();//相手が出すじゃんけん
+        char[] jan_select =new char[jan.length()];;//じゃんけん比較用
+        int total_win_number =0;//勝ち回数
+
+
+
+       //全勝ちの指本数を求める処理
+       for(int i=0; i<jan.length(); i++){
+           jan_select[i] = jan.charAt(i);
+           switch (jan_select[i]){
+               case 'G':
+                   total_win_number += 5;
+                   break;
+               case'P':
+                   total_win_number += 2;
+                   break;
+               case 'C':
+                   break;
+
+           }
+
+           //勝利回数判定
+           if(total_finger_times >= total_win_number){
+               total_win_number = total_jan_times;
+           }
+
+           //勝利指総数よりも前勝ちパターンの指本数が多い場合の処理
+
+       }
+        System.out.println(total_win_number);
+     }
+    }
+
