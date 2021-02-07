@@ -1,3 +1,5 @@
+package com.koike;
+
 import java.util.*;
 
 /*問題URL
@@ -13,34 +15,31 @@ public class Main {
         int total_finger_times = sc.nextInt();//指の総数
         String jan = sc.nextLine();//相手が出すじゃんけん
         char[] jan_select =new char[jan.length()];;//じゃんけん比較用
-        int total_win_number =0;//勝ち回数
+        int total_win =0;//勝ち回数
+        int goo_num =0;
+        int choki_num =0;
+        int pa_num =0;
 
-
-
-       //全勝ちの指本数を求める処理
+        //相手がだす手を数える
        for(int i=0; i<jan.length(); i++){
            jan_select[i] = jan.charAt(i);
            switch (jan_select[i]){
                case 'G':
-                   total_win_number += 5;
+                   goo_num +=1;
                    break;
                case'P':
-                   total_win_number += 2;
+                   pa_num +=1;
                    break;
                case 'C':
+                   choki_num +=1;
                    break;
-
            }
-
-           //勝利回数判定
-           if(total_finger_times >= total_win_number){
-               total_win_number = total_jan_times;
-           }
-
-           //勝利指総数よりも前勝ちパターンの指本数が多い場合の処理
-
        }
-        System.out.println(total_win_number);
+
+       //勝ちパターンの計算
+
+
+        //出力
      }
     }
 
